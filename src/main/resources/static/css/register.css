@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap");
+
+:root {
+  --grad-header: linear-gradient(90deg, #7986cb 0%, #9575cd 100%);
+  --grad-bg: linear-gradient(135deg, #e3f2fd 0%, #fce4ec 100%);
+  --pastel-mint: #e8f5e9;
+  --border-mint: #a5d6a7;
+  --text-main: #455a64;
+}
+
+body {
+  font-family: "Playpen Sans", cursive;
+  background: var(--grad-bg);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.auth-nav {
+  height: 70px;
+  background: var(--grad-header);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  color: white;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.img-icon-main {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.auth-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 2px, transparent 2px);
+  background-size: 24px 24px;
+}
+
+.auth-card {
+  width: 400px;
+  padding: 35px;
+  border-radius: 20px;
+  background: white;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.05);
+}
+
+.form-label {
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.form-control {
+  border: 2px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+  font-family: inherit;
+}
+
+.form-control:focus {
+  border-color: #9575cd;
+  box-shadow: none;
+}
+
+.btn-signup {
+  background-color: var(--pastel-mint);
+  border: 2px solid var(--border-mint);
+  color: var(--text-main);
+  font-weight: 800;
+  padding: 12px;
+  border-radius: 12px;
+  transition: transform 0.2s;
+  margin-top: 10px;
+}
+
+.btn-signup:hover {
+  transform: translateY(-3px);
+  background-color: #dcedc8;
+  border-color: #81c784;
+}
+
+.alert {
+  border-radius: 12px;
+  font-weight: 600;
+  border: 2px solid transparent;
+}
+
+.alert-success {
+  background: #e8f5e9;
+  border-color: #a5d6a7;
+  color: #2e7d32;
+}
+.alert-danger {
+  background: #ffebee;
+  border-color: #ef9a9a;
+  color: #c62828;
+}
+
+a {
+  color: #7986cb;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.alert {
+  border-radius: 12px;
+  border-width: 2px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  border-color: #a5d6a7;
+  color: #2e7d32;
+}
+
+.alert-danger {
+  background-color: #ffebee;
+  border-color: #ef9a9a;
+  color: #c62828;
+}

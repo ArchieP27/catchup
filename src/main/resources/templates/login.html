@@ -1,0 +1,67 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Login | CatchUp</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link rel="icon" type="image/png" th:href="@{/images/logo.png}" />
+    <link th:href="@{/css/login.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="auth-nav">
+      <div class="logo-area">
+        <img th:src="@{/images/logo.png}" class="img-icon-main" alt="Logo" />
+        <h2 class="m-0">CatchUp</h2>
+      </div>
+    </div>
+
+    <div class="auth-container">
+      <div class="auth-card">
+        <h3 class="text-center mb-4" style="color: #455a64; font-weight: 800">
+          Welcome Back
+        </h3>
+
+        <div th:if="${param.error}" class="alert alert-danger">
+          <strong>Oops!</strong> Invalid username or password.
+        </div>
+
+        <div th:if="${param.logout}" class="alert alert-success">
+          You have been logged out successfully.
+        </div>
+
+        <div th:if="${param.registered}" class="alert alert-success">
+          Account created! You can now log in.
+        </div>
+
+        <form th:action="@{/login}" method="post">
+          <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input
+              type="text"
+              name="username"
+              class="form-control"
+              required
+              placeholder="Enter username"
+            />
+          </div>
+          <div class="mb-4">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              required
+              placeholder="Enter password"
+            />
+          </div>
+          <button type="submit" class="btn btn-login w-100">Login</button>
+        </form>
+
+        <div class="text-center mt-4">
+          <span style="color: #78909c; font-weight: 600">
+            New here? <a th:href="@{/register}">Create an account</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>CatchUp</title>
+    <link rel="icon" type="image/png" th:href="@{/images/logo.png}">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/chat.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="top-nav">
+      <div class="logo-area">
+        <img th:src="@{/images/logo.png}" class="img-icon-main" alt="Logo">
+        <h2 class="m-0">CatchUp</h2>
+      </div>
+      <div class="user-controls">
+        <div class="profile-badge">
+          <span id="currentUser" th:text="${#authentication.name}">User</span>
+          <a th:href="@{/logout}" class="logout-link">
+            <img th:src="@{/images/logout.png}" class="img-icon-sm" alt="Logout">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="chat-main-container">
+      <div id="sidebar">
+        <button class="action-card public-card" onclick="goPublic()">
+          <img th:src="@{/images/public_room.png}" class="img-icon-md" alt="Public">
+          <span>Public Room</span>
+        </button>
+
+        <div class="sidebar-section">
+          <input type="text" id="userSearch" class="neo-search" placeholder="Search friends..." oninput="searchPeople()">
+          <ul id="search-results" class="list-unstyled mt-2"></ul>
+        </div>
+
+        <div class="sidebar-label">Recent Chats</div>
+        <ul id="recent-chats" class="list-unstyled"></ul>
+
+        <div class="sidebar-label">Online Now</div>
+        <ul id="user-list" class="list-unstyled online-grid"></ul>
+      </div>
+
+      <div id="messages-area-wrapper">
+        <div id="chat-header">
+           <div class="header-info">
+              <img th:src="@{/images/user.png}" class="header-avatar img-icon-md" alt="">
+              <h4 id="chat-with-name" class="m-0">Public Chat Room</h4>
+           </div>
+           <div id="typing-indicator"></div>
+        </div>
+        
+        <div id="messages"></div>
+
+        <div id="input-area">
+          <input type="text" id="message" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+          <button class="send-btn" onclick="sendMessage()">
+            <img th:src="@{/images/send.png}" class="img-icon-md" alt="Send">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script th:src="@{/js/sockjs.min.js}"></script>
+    <script th:src="@{/js/stomp.min.js}"></script>
+    <script th:src="@{/js/chat.js}"></script>
+  </body>
+</html>
