@@ -31,7 +31,6 @@ CatchUp is a real-time, full-stack chat application built with **Spring Boot 4**
 1. **Clone the repository**
    ```bash
    git clone [https://github.com/ArchieP27/catchup.git](https://github.com/ArchieP27/catchup.git)
-   cd catchup
    ```
 2. **Build the project**
 
